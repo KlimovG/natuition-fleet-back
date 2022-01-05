@@ -4,6 +4,7 @@ const sessionRouter = express.Router();
 const {
     get_all_sessions,
     get_one_session,
+    filter_all_sessions,
     add_session,
     update_session,
     delete_session,
@@ -12,6 +13,7 @@ const {
 
 /* GET home page. */
 sessionRouter.get('/all/:id', get_all_sessions);
+sessionRouter.get('/all/:id/:type', filter_all_sessions);
 sessionRouter.get('/:id', get_one_session);
 sessionRouter.post('/', add_session);
 sessionRouter.post('/load', load_sessions);
